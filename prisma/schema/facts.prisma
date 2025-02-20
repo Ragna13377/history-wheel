@@ -1,0 +1,7 @@
+model Facts {
+  id            Int          @id @default(autoincrement())
+  year          Int
+  description   String
+  timeSegmentId Int
+  timeSegment   TimeSegments @relation(fields: [timeSegmentId], references: [id])
+}
