@@ -2,5 +2,6 @@ model TimeSegments {
   id        Int     @id @default(autoincrement())
   startYear Int
   endYear   Int
+  theme     String
   facts     Facts[]
 }

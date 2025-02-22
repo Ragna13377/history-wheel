@@ -1,8 +1,8 @@
 [
-  { "startYear": 1910, "endYear": 1920 },
-  { "startYear": 1920, "endYear": 1930 },
-  { "startYear": 1940, "endYear": 1950 },
-  { "startYear": 1960, "endYear": 1970 },
-  { "startYear": 1980, "endYear": 1990 },
-  { "startYear": 2000, "endYear": 2010 }
+  { "startYear": 1910, "endYear": 1920, "theme": "Технологии" },
+  { "startYear": 1920, "endYear": 1930, "theme": "Экономика" },
+  { "startYear": 1941, "endYear": 1953, "theme": "Медицина" },
+  { "startYear": 1961, "endYear": 1977, "theme": "Космос" },
+  { "startYear": 1983, "endYear": 1995, "theme": "Наука" },
+  { "startYear": 2001, "endYear": 2009, "theme": "Кино" }
 ]
