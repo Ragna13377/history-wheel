@@ -1,28 +1,14 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
+import { NavButtonProps } from '@shared/ui/NavButton/types';
 
-type ButtonProps = React.ComponentPropsWithRef<'button'> & {
-	direction?: 'left' | 'right';
-	$dotAnimation?: boolean;
-};
-
-const expandAnimation = keyframes`
-  0% {
-    transform: scale(0.12);
-    background: hsla(219, 30%, 37%, 1);
-  }
-  100% {
-    transform: scale(1);
-    background: white;
-  }
-`;
-
-const StyledButton = styled.button<ButtonProps>`
+const StyledButton = styled.button<NavButtonProps>`
 	width: 50px;
 	height: 50px;
-	border: 1px solid hsla(238, 30%, 37%, 0.5);
-	background: white;
-	border-radius: 50%;
 	position: relative;
+	border: 1px solid hsla(238, 30%, 37%, 0.5);
+	border-radius: 50%;
+	background: white;
+
 	${({ direction }) =>
 		direction &&
 		`
@@ -39,16 +25,6 @@ const StyledButton = styled.button<ButtonProps>`
 			transform: translate(-50%, -50%) rotate(${direction === 'left' ? '135deg' : '-45deg'});
 		}
 	 `}
-	${({ $dotAnimation }) =>
-		$dotAnimation &&
-		css`
-			background: hsla(219, 30%, 37%, 1);
-			transform: scale(0.12);
-			&:hover {
-				animation: ${css`
-						${expandAnimation}`} 0.3s ease-out forwards;
-			}
-		`}
 `;
 
-export const NavButton = (props: ButtonProps) => <StyledButton {...props} />;
+export const NavButton = (props: NavButtonProps) => <StyledButton {...props} />;
