@@ -7,15 +7,17 @@ import { useState } from 'react';
 const DialUI = ({ activeButton, buttonAngles, radius, shiftAngle, changeActiveButton }: DialUIProps) => {
 	const [rotation, setRotation] = useState(0);
 	const rotateDial = (angle: number) => {
-		const delta = (angle - shiftAngle + 360) % 360;
-		const currentDelta = (angle - shiftAngle + rotation + 360) % 360;
-		const newRotation = currentDelta < 180 ? -delta : 360 - delta;
-		setRotation(newRotation);
+		const currentRotation = rotation;
+		const targetRotation = (shiftAngle - angle + 360) % 360;
+		const delta = (targetRotation - currentRotation + 360) % 360;
+		const newRotation = delta > 180 ? delta - 360 : delta;
+		console.log(rotation + newRotation)
+		setRotation((prevRotation) => prevRotation + newRotation);
 	};
 	return (
 		<StyledDial radius={radius} $rotation={rotation}>
 			{buttonAngles.map((angle, index) => (
-				<ButtonContainer key={index} $angle={angle} $rotationFix={rotation} $radius={radius}>
+				<ButtonContainer key={index} $rotationFix={rotation} $angle={angle} $radius={radius}>
 					<NavButtonGrow
 						onClick={() => {
 							rotateDial(angle);

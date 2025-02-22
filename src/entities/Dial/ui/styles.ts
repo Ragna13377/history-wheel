@@ -19,6 +19,7 @@ export const ButtonContainer = styled.div<ButtonContainerProps>`
 		translateY(-${({ $radius }) => $radius / 2}px);
 	transform-origin: center;
 	> * {
-		rotate: -${({ $angle, $rotationFix }) => $angle + $rotationFix}deg;
+		rotate: ${({ $angle, $rotationFix }) => -($angle + $rotationFix + 360) % 360}deg;
+    transition: rotate 0.5s ease-in-out;
 	}
 `;
