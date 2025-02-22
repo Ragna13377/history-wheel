@@ -1,14 +1,19 @@
 export type DialProps = {
-	radius: number;
 	buttonsCount: number;
+	changeActiveButton: (index: number) => void;
+	activeButton: number;
+	radius?: number;
+	shiftAngle?: number;
 };
 
-export type DialUIProps = {
-	radius: number;
+export type DialUIProps = Pick<DialProps, 'changeActiveButton' | 'activeButton'> & {
 	buttonAngles: number[];
+	radius: number;
+	shiftAngle: number;
 };
 
-export type ButtonPositoinProps = {
-	angle: number;
-	radius: number;
+export type ButtonContainerProps = {
+	$angle: number;
+	$rotationFix: number;
+	$radius: number;
 };
