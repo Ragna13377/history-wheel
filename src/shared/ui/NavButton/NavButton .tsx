@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { NavButtonProps } from '@shared/ui/NavButton/types';
 
 const StyledButton = styled.button<NavButtonProps>`
-	width: 50px;
-	height: 50px;
+  inline-size: 50px;
+	block-size: 50px;
 	position: relative;
 	border: 1px solid hsla(238, 30%, 37%, 0.5);
 	border-radius: 50%;
@@ -19,10 +19,10 @@ const StyledButton = styled.button<NavButtonProps>`
 			display: inline-block;
 			padding: 4px;
       position: absolute;
-      top: 50%;
-      left: ${direction === 'left' ? '55%' : '45%'};
+      inset-block-start: 50%;
+      inset-inline-start: ${direction === 'back' ? '55%' : '45%'};
       transform-origin: center;
-			transform: translate(-50%, -50%) rotate(${direction === 'left' ? '135deg' : '-45deg'});
+			transform: translate(-50%, -50%) rotate(${direction === 'back' ? '135deg' : '-45deg'});
 		}
 	 `}
 `;

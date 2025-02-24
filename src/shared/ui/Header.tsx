@@ -22,8 +22,8 @@ const StyledH1 = styled.h1`
 		inline-size: 5px;
 		block-size: 100%;
 		background-image: linear-gradient(
-			hsl(var(--gradient-accent-start)),
-			hsl(var(--gradient-accent-end))
+			hsl(var(--accent-start-color)),
+			hsl(var(--accent-end-color))
 		);
 	}
 `;

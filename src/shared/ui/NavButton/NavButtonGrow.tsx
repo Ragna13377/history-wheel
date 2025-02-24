@@ -13,9 +13,9 @@ const growAnimation = keyframes`
   }
 `;
 
-const ButtonWrapper = styled.div`
-	width: 50px;
-	height: 50px;
+const ButtonWrapper = styled.div<Pick<NavButtonGrowProps, '$isActive'>>`
+  inline-size: 50px;
+	block-size: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -30,10 +30,22 @@ const ButtonWrapper = styled.div`
 		animation: ${css`
 				${growAnimation}`} 0.3s ease-out forwards;
 	}
+	${({ $isActive }) =>
+		$isActive &&
+		css`
+			button {
+				animation: ${css`
+						${growAnimation}`} 0.3s ease-out forwards;
+			}
+		`}
 `;
 
-export const NavButtonGrow = ({ containerProps, ...buttonProps }: NavButtonGrowProps) => (
-	<ButtonWrapper {...containerProps}>
+export const NavButtonGrow = ({
+	$isActive = false,
+	containerProps,
+	...buttonProps
+}: NavButtonGrowProps) => (
+	<ButtonWrapper $isActive={$isActive} {...containerProps}>
 		<NavButton {...buttonProps} />
 	</ButtonWrapper>
 );

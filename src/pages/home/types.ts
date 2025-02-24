@@ -1,5 +1,3 @@
-import { getTimeSegments } from '@pages/home/actions';
+import { FactsWheelProps } from '@widgets/FactsWheel/types';
 
-export type HomePageProps = {
-	timeSegments: Awaited<ReturnType<typeof getTimeSegments>>
-}
+export type HomePageProps = Pick<FactsWheelProps, 'timeSegments'>;

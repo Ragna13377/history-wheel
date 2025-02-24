@@ -1,7 +1,10 @@
+export type TDirection = 'forward' | 'back';
+
 export type NavButtonProps = React.ComponentPropsWithRef<'button'> & {
-	direction?: 'left' | 'right';
+	direction?: TDirection;
 };
 
 export type NavButtonGrowProps = NavButtonProps & {
+	$isActive?: boolean;
 	containerProps?: React.ComponentPropsWithRef<'div'>;
 };

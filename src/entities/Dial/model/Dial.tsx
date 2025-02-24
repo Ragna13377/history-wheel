@@ -1,11 +1,13 @@
+'use client';
 import { DialProps } from '../types';
 import DialUI from '../ui/DialUI';
-import { defaultRadius, defaultShiftAngle } from '../constants';
+import { useRotation } from '@entities/Dial/hooks/useRotation';
 
-export const Dial = ({ buttonsCount, radius = defaultRadius, shiftAngle = defaultShiftAngle, ...rest }: DialProps) => {
-	const buttonAngles = Array.from(
-		{ length: buttonsCount },
-		(_, ind) => (360 / buttonsCount) * ind + defaultShiftAngle
-	);
-	return <DialUI buttonAngles={buttonAngles} radius={radius} shiftAngle={shiftAngle} {...rest} />;
+export const Dial = ({ buttonsCount, shiftAngle, activeButton, ...rest }: DialProps) => {
+	const rotation = useRotation({
+		buttonsCount,
+		shiftAngle,
+		activeButton,
+	});
+	return <DialUI activeButton={activeButton} {...rotation} {...rest} />;
 };

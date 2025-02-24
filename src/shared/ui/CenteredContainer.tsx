@@ -1,12 +1,12 @@
-import React, { ComponentPropsWithRef } from 'react';
+import { ComponentPropsWithRef } from 'react';
 import styled from 'styled-components';
 
 type CenteredContainerProps = ComponentPropsWithRef<'div'>;
 
 const StyledCenteredContainer = styled.div<CenteredContainerProps>`
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	inset-inline-start: 50%;
+	inset-block-start: 50%;
 	transform: translate(-50%, -50%);
 `;
 
