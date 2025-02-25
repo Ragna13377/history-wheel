@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useState } from 'react';
-import { defaultShiftAngle } from '@entities/Dial/constants';
-import { DialProps } from '@entities/Dial/types';
+import { defaultShiftAngle } from '../constants';
+import { WheelControlProps } from '../types';
 
 export const useRotation = ({
 	buttonsCount,
 	shiftAngle,
 	activeButton,
-}: Omit<DialProps, 'radius' | 'changeActiveButton' | 'animationDuration'>) => {
+}: Omit<
+	WheelControlProps,
+	'$diameter' | 'changeActiveButton' | '$animationDuration' | 'labels'
+>) => {
 	const buttonAngles = Array.from(
 		{ length: buttonsCount },
 		(_, ind) => (360 / buttonsCount) * ind + defaultShiftAngle
@@ -28,7 +31,7 @@ export const useRotation = ({
 
 	return {
 		buttonAngles,
-		rotation,
+		$rotation: rotation,
 		rotateDial,
 	};
 };

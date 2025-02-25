@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { NavButtonProps } from '@shared/ui/NavButton/types';
 
 const StyledButton = styled.button<NavButtonProps>`
-  inline-size: 50px;
+	inline-size: 50px;
 	block-size: 50px;
 	position: relative;
 	border: 1px solid hsla(238, 30%, 37%, 0.5);

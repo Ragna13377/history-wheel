@@ -1,6 +1,6 @@
 'use server';
 import prisma from '@shared/lib/prisma';
-import { timeSegmentsSchema } from '@entities/Dial/shema';
+import { timeSegmentsSchema } from '@entities/WheelControl/shema';
 import { notFound } from 'next/navigation';
 
 export const getTimeSegments = async () => {

@@ -14,17 +14,20 @@ const growAnimation = keyframes`
 `;
 
 const ButtonWrapper = styled.div<Pick<NavButtonGrowProps, '$isActive'>>`
-  inline-size: 50px;
+	inline-size: 50px;
 	block-size: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	border-radius: 50%;
 	cursor: pointer;
-
 	button {
 		background: hsla(219, 30%, 37%, 1);
 		transform: scale(0.12);
+		transition:
+			transform 0.3s ease-out,
+			background 0.6s ease-out;
 	}
 	&:hover button {
 		animation: ${css`
@@ -34,8 +37,8 @@ const ButtonWrapper = styled.div<Pick<NavButtonGrowProps, '$isActive'>>`
 		$isActive &&
 		css`
 			button {
-				animation: ${css`
-						${growAnimation}`} 0.3s ease-out forwards;
+				transform: scale(1);
+				background: white;
 			}
 		`}
 `;

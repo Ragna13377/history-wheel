@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { defaultActiveButton } from '@widgets/FactsWheel/constants';
 import { TDirection } from '@shared/ui/NavButton/types';
-import { FactsWheelProps } from '@widgets/FactsWheel/types';
+import { defaultActiveButton } from '../constants';
+import { TimelineNavigatorProps } from '../types';
 
-export const useWheelNavigation = ({ timeSegments }: FactsWheelProps) => {
+export const useWheelNavigation = ({ timeSegments }: TimelineNavigatorProps) => {
 	const [activeButton, setActiveButton] = useState(defaultActiveButton);
 	const [{ startYear, endYear }, setCurrentInterval] = useState(timeSegments[activeButton]);
 	const changeActiveButton = (index: number) => {
@@ -23,6 +23,6 @@ export const useWheelNavigation = ({ timeSegments }: FactsWheelProps) => {
 		activeButton,
 		handleNavigation,
 		changeActiveButton,
-		activeLabel: timeSegments[activeButton].theme,
+		labels: timeSegments.map((el) => el.theme),
 	};
 };

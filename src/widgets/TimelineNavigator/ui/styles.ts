@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 
-export const StyledTimeTicker = styled.div<{ radius: number }>`
+export const StyledYearRangeContainer = styled.div<{ $diameter: number }>`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	inline-size: calc(${({ radius }) => radius}px + var(--year-ticker-font-size) * 2.25);
-	position: absolute;
-	inset-inline-start: 50%;
-	inset-block-start: 50%;
-	transform: translate(-50%, -50%);
+	inline-size: calc(${({ $diameter }) => $diameter}px + var(--year-ticker-font-size) * 2.25);
 	font-size: var(--year-ticker-font-size);
 	font-weight: 700;
 	line-height: 160px;
@@ -22,10 +18,4 @@ export const StyledTimeTicker = styled.div<{ radius: number }>`
 	& > *:nth-child(2) {
 		color: hsl(var(--accent-end-color));
 	}
-`;
-
-export const StyledLabel = styled.span`
-	position: absolute;
-	inset-block-start: 0;
-	inset-inline-start: 0;
 `;

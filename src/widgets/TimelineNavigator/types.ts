@@ -1,20 +1,22 @@
 import { TDirection } from '@shared/ui/NavButton/types';
-import { DialProps } from '@entities/Dial/types';
+import { WheelControlProps } from '@entities/WheelControl/types';
 import { getTimeSegments } from '@pages/home/actions';
 
 /**
  * animationDuration in milliseconds
  */
-export type FactsWheelProps = {
+export type TimelineNavigatorProps = {
 	timeSegments: Awaited<ReturnType<typeof getTimeSegments>>;
-	radius?: number;
+	diameter?: number;
 	shiftAngle?: number;
 	animationDuration?: number;
 };
 
-export type FactsWheelUIProps = Omit<DialProps, 'radius' | 'shiftAngle' | 'animationDuration'> &
-	Omit<FactsWheelProps, 'timeSegments'> & {
-		activeLabel: string;
+export type TimelineNavigatorUIProps = Omit<
+	WheelControlProps,
+	'$diameter' | 'shiftAngle' | '$animationDuration'
+> &
+	Omit<TimelineNavigatorProps, 'timeSegments'> & {
 		startYear: number;
 		endYear: number;
 		handleNavigation: (direction: TDirection) => void;

@@ -16,6 +16,7 @@ export const StyledMain = styled.main`
 		content: '';
 		position: absolute;
 		background-color: hsl(var(--accent));
+		z-index: -1;
 	}
 	&:after {
 		block-size: 1px;

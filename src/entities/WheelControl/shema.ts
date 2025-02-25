@@ -7,4 +7,4 @@ export const timeSegmentsSchema = z.object({
 	theme: z.string(),
 })
 
-export type TimeSegmentsSchemaProps = z.infer<typeof timeSegmentsSchema>
+export type TimeSegmentsSchemaProps = z.infer<typeof timeSegmentsSchema>;
