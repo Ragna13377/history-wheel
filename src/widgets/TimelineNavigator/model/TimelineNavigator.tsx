@@ -1,9 +1,9 @@
 'use client';
 import TimelineNavigatorUI from '../ui/TimelineNavigatorUI';
-import { useWheelNavigation } from '../hooks/useWheelNavigation';
+import { useNavigator } from '../hooks/useNavigator';
 import { TimelineNavigatorProps } from '../types';
 
 export const TimelineNavigator = ({ timeSegments, ...props }: TimelineNavigatorProps) => {
-	const wheelNavigation = useWheelNavigation({ timeSegments });
+	const wheelNavigation = useNavigator({ timeSegments });
 	return <TimelineNavigatorUI buttonsCount={timeSegments.length} {...wheelNavigation} {...props} />;
 };

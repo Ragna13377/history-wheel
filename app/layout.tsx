@@ -1,16 +1,13 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { PT_Sans } from 'next/font/google';
 import StyledComponentsRegistry from '@shared/lib/registry';
 import '@app/styles/globals.scss';
 
-const geistSans = Geist({
-	variable: '--font-geist-sans',
-	subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
-	subsets: ['latin'],
+const ptSans = PT_Sans({
+		variable: '--font-pt-sans',
+		subsets: ['latin'],
+		weight: ['400', '700'],
+		display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -25,7 +22,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased h-dvh h-dvw`}>
+			<body className={`${ptSans.className} antialiased h-dvh h-dvw`}>
 				<StyledComponentsRegistry>{children}</StyledComponentsRegistry>
 			</body>
 		</html>

@@ -3,5 +3,5 @@ import { getTimeSegments } from '@pages/home/actions';
 
 export const HomePage = async () => {
 	const timeSegments = await getTimeSegments();
-	return <HomePageUI timeSegments={timeSegments} />;
+	return <HomePageUI timeSegments={timeSegments!} />;
 };

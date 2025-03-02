@@ -14,8 +14,8 @@ const growAnimation = keyframes`
 `;
 
 const ButtonWrapper = styled.div<Pick<NavButtonGrowProps, '$isActive'>>`
-	inline-size: 50px;
-	block-size: 50px;
+	inline-size: 3.125rem;
+	block-size: 3.125rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -39,6 +39,9 @@ const ButtonWrapper = styled.div<Pick<NavButtonGrowProps, '$isActive'>>`
 			button {
 				transform: scale(1);
 				background: white;
+        &:hover{
+	        animation: none;
+        }
 			}
 		`}
 `;

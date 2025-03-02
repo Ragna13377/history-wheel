@@ -1,4 +1,4 @@
-export type TDirection = 'forward' | 'back';
+import { TDirection } from '@shared/types';
 
 export type NavButtonProps = React.ComponentPropsWithRef<'button'> & {
 	direction?: TDirection;

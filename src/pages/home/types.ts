@@ -1,3 +1,3 @@
-import { FactsWheelProps } from '@widgets/TimelineNavigator/types';
+import { TimelineNavigatorProps } from '@widgets/TimelineNavigator/types';
 
-export type HomePageProps = Pick<FactsWheelProps, 'timeSegments'>;
+export type HomePageProps = Pick<TimelineNavigatorProps, 'timeSegments'>;

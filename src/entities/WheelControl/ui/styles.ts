@@ -9,6 +9,7 @@ export const StyledWheelControl = styled.div<
 	inline-size: ${({ $diameter }) => $diameter}px;
 	block-size: ${({ $diameter }) => $diameter}px;
 	aspect-ratio: 1/1;
+  margin: 0 auto;
 	transform: rotate(${({ $rotation }) => $rotation}deg);
 	transition: transform ${({ $animationDuration }) => $animationDuration / 1000}s ease-in-out;
 `;

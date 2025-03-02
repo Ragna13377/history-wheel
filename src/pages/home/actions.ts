@@ -1,20 +1,21 @@
 'use server';
 import prisma from '@shared/lib/prisma';
-import { timeSegmentsSchema } from '@entities/WheelControl/shema';
-import { notFound } from 'next/navigation';
+import { factsSchema, timeSegmentsSchema } from '@pages/home/shema';
+import { prismaFetch } from '@shared/api/prismaFetch';
 
-export const getTimeSegments = async () => {
-	try {
-		const segments = await prisma.timeSegments.findMany();
-		const parseResult = timeSegmentsSchema.array().safeParse(segments);
+export const getTimeSegments = async () =>
+	prismaFetch({
+		query: () => prisma.timeSegments.findMany(),
+		schema: timeSegmentsSchema.array(),
+		notFoundRedirect: true,
+	});
 
-		if (!parseResult.success) {
-			console.log('Incorrect data: ', parseResult.error);
-			notFound();
-		}
-		return parseResult.data;
-	} catch (error) {
-		console.log('DB connection error: ', error);
-		notFound();
-	}
-};
+export const getFactsByTimeSegmentId = async (timeSegmentId: number) =>
+	prismaFetch({
+		query: () =>
+			prisma.facts.findMany({
+				where: { timeSegmentId },
+				orderBy: { year: 'asc' },
+			}),
+		schema: factsSchema.array(),
+	});
