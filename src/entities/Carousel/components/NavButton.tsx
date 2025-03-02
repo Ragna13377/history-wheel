@@ -14,12 +14,14 @@ const StyledNavCarousel = styled.div<{ $direction: TDirection }>`
 	@media (max-width: 1024px) {
 		display: none;
 	}
+
 	&:before {
 		inline-size: 2.5rem;
 		block-size: 2.5rem;
-		box-shadow: 0px 0px 0.9375rem 0px hsla(219, 84%, 58%, 0.1);
+		box-shadow: 0 0 0.9375rem 0 hsla(219, 84%, 58%, 0.1);
 		border-radius: 50%;
 	}
+
 	${({ $direction }) => ($direction === 'forward' ? 'right: 0;' : 'left: 0;')}
 	${({ $direction }) =>
 		$direction &&

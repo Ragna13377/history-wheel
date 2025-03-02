@@ -39,9 +39,9 @@ const ButtonWrapper = styled.div<Pick<NavButtonGrowProps, '$isActive'>>`
 			button {
 				transform: scale(1);
 				background: white;
-        &:hover{
-	        animation: none;
-        }
+				&:hover {
+					animation: none;
+				}
 			}
 		`}
 `;

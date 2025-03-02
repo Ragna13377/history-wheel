@@ -4,10 +4,10 @@ import StyledComponentsRegistry from '@shared/lib/registry';
 import '@app/styles/globals.scss';
 
 const ptSans = PT_Sans({
-		variable: '--font-pt-sans',
-		subsets: ['latin'],
-		weight: ['400', '700'],
-		display: 'swap',
+	variable: '--font-pt-sans',
+	subsets: ['latin'],
+	weight: ['400', '700'],
+	display: 'swap',
 });
 
 export const metadata: Metadata = {

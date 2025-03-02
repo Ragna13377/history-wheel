@@ -1,6 +1,4 @@
 import { leadingZeroFormat } from '@shared/utils/numberFormatters';
-import { CenteredContainer } from '@shared/ui/CenteredContainer';
-import { NavButton } from '@shared/ui/NavButton';
 import { Carousel } from '@entities/Carousel';
 import { TimeTicker } from '@entities/TimeTicker';
 import { WheelControl } from '@entities/WheelControl';
@@ -12,7 +10,8 @@ import {
 import { TimelineNavigatorUIProps } from '../types';
 import {
 	StyledCenteredContainer,
-	StyledControls, StyledNavButton,
+	StyledControls,
+	StyledNavButton,
 	StyledNavigation,
 	StyledWheelWrapper,
 	StyledYearRangeContainer,
