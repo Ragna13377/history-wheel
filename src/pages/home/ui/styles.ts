@@ -11,8 +11,7 @@ const StyledMain = styled.main`
 	inline-size: 100%;
 	margin: 0 calc((100% - 1440px) / 3) 0 calc((100% - 1440px) / 3 * 2);
 	border-inline: 1px solid hsl(var(--accent));
-	padding: clamp(3.75rem, 2.375rem + 6.875vw, 10.625rem) 0
-		clamp(0.8125rem, -0.325rem + 5.6875vw, 6.5rem) 0;
+	padding: clamp(3.75rem, 3rem + 3.75vw, 7.5rem) 0 clamp(0.8125rem, -0.325rem + 5.6875vw, 6.5rem) 0;
 	@media (max-width: 1440px) {
 		justify-content: flex-start;
 		margin: 0;

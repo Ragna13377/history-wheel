@@ -8,7 +8,7 @@ export const StyledYearRangeContainer = styled.div<{ $diameter: number }>`
 	align-items: center;
 	inline-size: calc(${({ $diameter }) => $diameter}px + var(--year-ticker-font-size) * 2.25);
 	margin: 0 auto;
-	padding-block: 56px;
+	padding-block: var(--year-ticker-inline-padding);
 	font-size: var(--year-ticker-font-size);
 	font-weight: 700;
 	line-height: clamp(4.5rem, 3.4rem + 5.5vw, 10rem);
@@ -34,7 +34,9 @@ export const StyledNavigation = styled.div<{ $diameter: number }>`
 	align-items: flex-start;
 	gap: clamp(0.625rem, 0.5rem + 0.625vw, 1.25rem);
 	padding-inline-start: var(--page-offset);
-	margin-block-start: ${({ $diameter }) => $diameter / 4}px;
+	margin-block-start: calc(
+		${({ $diameter }) => $diameter / 4}px - var(--year-ticker-inline-padding)
+	);
 	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 1.2;

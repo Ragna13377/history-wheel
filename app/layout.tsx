@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={`${ptSans.className} antialiased h-dvh h-dvw`}>
+			<body className={`${ptSans.className} antialiased h-dvh w-full`}>
 				<StyledComponentsRegistry>{children}</StyledComponentsRegistry>
 			</body>
 		</html>
