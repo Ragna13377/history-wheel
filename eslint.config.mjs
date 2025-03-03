@@ -35,6 +35,19 @@ const eslintConfig = [
 			quotes: [2, 'single', { avoidEscape: true }],
 		},
 	}),
+	{
+		ignores: [
+			'node_modules',
+			'public',
+			'dist',
+			'build',
+			'webpack/*.js',
+			'package*.json',
+			'.eslintrc.js',
+			'**/*.d.ts',
+			'storybook-static'
+		]
+	}
 ];
 
 export default eslintConfig;
